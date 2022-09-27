@@ -27,3 +27,9 @@
     background-color: orangered;
     color: whitesmoke;
 }
+
+@media screen and (max-width:1200px) {
+    .meal img {
+        width: 100%;
+    }
+}
