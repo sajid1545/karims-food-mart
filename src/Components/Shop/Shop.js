@@ -4,6 +4,8 @@ import Meal from '../Meal/Meal';
 import './Shop.css';
 import Swal from 'sweetalert2';
 import { addToDb, getStoredCart } from '../../Utilities/localStorage';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Shop = () => {
 	const [meals, setMeals] = useState([]);
@@ -40,7 +42,8 @@ const Shop = () => {
 				newCart = [...cart, selectedMeal];
 				addToDb(selectedMeal.idMeal);
 				setCart(newCart);
-			} else {
+            } else {
+                toast("Same meal already added to cart")
 				Swal.fire({
 					icon: 'error',
 					title: 'Oops...',
@@ -49,13 +52,14 @@ const Shop = () => {
 				return;
 			}
         } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Cant add more than 5 meals',
-            });
-            return;
-        }
+            toast("You have already selected 5 meals")
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Cant add more than 5 meals',
+			});
+			return;
+		}
 	};
 
 	return (
@@ -68,7 +72,8 @@ const Shop = () => {
 
 			<div className="cart-container">
 				<Cart cart={cart} />
-			</div>
+            </div>
+            <ToastContainer />
 		</div>
 	);
 };
