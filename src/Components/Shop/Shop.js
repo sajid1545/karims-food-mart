@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Meal from '../Meal/Meal';
 import './Shop.css';
+import Swal from 'sweetalert2';
 
 const Shop = () => {
 	const [meals, setMeals] = useState([]);
@@ -22,10 +23,15 @@ const Shop = () => {
 		if (!exist) {
 			newCart = [...cart, selectedMeal];
 			setCart(newCart);
-        } else {
-            alert("Please selectedMeal");
-            return;
-        }
+		} else {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Cant add the same meal twice to the cart',
+				
+			});
+			return;
+		}
 	};
 
 	return (
