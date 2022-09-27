@@ -1,0 +1,23 @@
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 115px;
+    background-color: #1C2B35;
+    color: white;
+}
+
+.head-title {
+    cursor: pointer;
+}
+
+.head a {
+    color: white;
+    margin-right: 30px;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.head a:hover {
+    color: orangered;
+}
