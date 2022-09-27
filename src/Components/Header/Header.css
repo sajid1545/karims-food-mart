@@ -9,6 +9,11 @@
 
 .head-title {
     cursor: pointer;
+    transition: all 0.5s linear;
+}
+
+.head-title:hover {
+    transform: scale(1.4);
 }
 
 .head a {
@@ -16,8 +21,34 @@
     margin-right: 30px;
     font-size: 17px;
     text-decoration: none;
+    transition: all 0.5s ease;
+
 }
 
 .head a:hover {
     color: orangered;
+}
+
+@media screen and (max-width:850px) {
+    .head {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .head a {
+        padding: 14px;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    .lists a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        flex-direction: column;
+
+    }
 }
