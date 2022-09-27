@@ -12,6 +12,9 @@
     background-color: green;
     color: white;
     border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .cart-items li {
@@ -20,14 +23,15 @@
 }
 
 .btn-delete {
-    background-color: rgb(255, 0, 0, 0.5);
+    background-color: rgb(255, 0, 0, 0.9);
     padding: 15px;
     border-radius: 10px;
 
     border: 0;
     cursor: pointer;
     width: 40%;
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-top: 50px;
     display: block;
     transition: all 0.5s ease;
 }
@@ -35,6 +39,12 @@
 .btn-delete .icon {
     color: white;
     font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.btn-delete .icon:hover {
+    transform: rotate(0deg);
+    transform: rotate(360deg);
 }
 
 .btn-delete:hover {

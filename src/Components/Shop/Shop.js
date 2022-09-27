@@ -65,7 +65,7 @@ const Shop = () => {
 	const handleClear = () => {
 		Swal.fire(
 			'Good job!',
-			'Local Storagge is Empty now !😟😟😟',
+			'Local Storage is Empty now !👌👌👌',
 		  )
 		localStorage.removeItem('meal-cart');
 		setCart([])
