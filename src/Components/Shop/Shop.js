@@ -34,10 +34,10 @@ const Shop = () => {
 
 	const handleAddToCart = (selectedMeal) => {
 		if (cart.length < 5) {
-			let newCart = [...cart, selectedMeal];
+			let newCart = [];
 
 			let exist = cart.find((meal) => meal.idMeal === selectedMeal.idMeal);
-			console.log(exist);
+			
 			if (!exist) {
 				newCart = [...cart, selectedMeal];
 				addToDb(selectedMeal.idMeal);
@@ -62,6 +62,15 @@ const Shop = () => {
 		}
 	};
 
+	const handleClear = () => {
+		Swal.fire(
+			'Good job!',
+			'Local Storagge is Empty now !😟😟😟',
+		  )
+		localStorage.removeItem('meal-cart');
+		setCart([])
+	}
+
 	return (
 		<div className="shop">
 			<div className="meal-container">
@@ -71,7 +80,7 @@ const Shop = () => {
 			</div>
 
 			<div className="cart-container">
-				<Cart cart={cart} />
+			<Cart cart={cart} handleClear = {handleClear} />
             </div>
             <ToastContainer />
 		</div>

@@ -2,3 +2,41 @@
     position: sticky;
     top: 0;
 }
+
+.cart-items {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+    border: 1px solid black;
+    padding: 15px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+}
+
+.cart-items li {
+    list-style: none;
+
+}
+
+.btn-delete {
+    background-color: rgb(255, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+
+    border: 0;
+    cursor: pointer;
+    width: 40%;
+    margin: 10px auto;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.btn-delete .icon {
+    color: white;
+    font-size: 20px;
+}
+
+.btn-delete:hover {
+    background-color: orangered;
+}

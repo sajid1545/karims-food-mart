@@ -1,11 +1,13 @@
 import React from 'react';
 import './Meal.css';
+import "aos/dist/aos.css";
+
 
 const Meal = ({ meal,handleAddToCart }) => {
 	const { idMeal, strMeal, strCategory, strMealThumb } = meal;
 	
 	return (
-		<div className="meal">
+		<div className="meal" data-aos="zoom-in">
 			<img src={strMealThumb} alt="" />
 			<div className='meal-info'>
 				<h3>Name : {strMeal}</h3>
